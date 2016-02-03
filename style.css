@@ -1,0 +1,30 @@
+body {
+  background-color: yellowgreen;
+  margin-top:100px;
+  width: 100%;
+}
+
+.start {
+  border: 3px black solid;
+  margin-left: 50px;
+  margin-bottom: 25px;
+  height:150px;
+  width: 180px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.board {
+  margin-left: 50px;
+}
+
+.board .row .cell {
+  border: 1px black solid;
+  height: 70px;
+  width: 180px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  padding-top: 50px;
+}
