@@ -22,10 +22,18 @@ $(function() {
   });
 
 // Here I need to apply data-spot-id w/numbers 1-45 to corresponding cells with the matching index, like gameSpots[44]= cell[95]. Something is working but not what I want
-$.each(gameSpots, function (i, id) {
-    var cell = $('#' + id); //there is something misssing here
-    $('.cell').attr("data-spot-id", i +1);
-  });
+// $.each(gameSpots, function (i, id) {
+//     var cell = $('#' + id); //there is something misssing here
+//     $('.cell').attr("data-spot-id", i +1);
+//   });
+
+
+gameSpots.forEach(function(id,i) {
+ var cell = $('#'+id);
+ cell.attr("data-spot-id", i+1);
+});
+
+
   
 
 });
