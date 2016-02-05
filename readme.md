@@ -1,7 +1,7 @@
 <h2>The Game of Life - San Francisco edition </h2>
 <h4>A fan tribute to the classic Life board game. Game play simulates a person's travels through his or her life, from college to retirement, with jobs, marriage, and possible children along the way.</h4>
 
-Link to game:  <a href="http://invester-eleven-51454.bitballoon.com/">Game of Life 2016- SF Edition</a>
+Link to game:  <a href="http://designer-panda-48702.bitballoon.com/">Game of Life 2016- SF Edition</a>
 
 <p>Most spots contain an event that costs or gives money, some more than others. More important than money is quality of life. These events and milestones are rewarded with LP, or life points.</p>
 
