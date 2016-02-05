@@ -25,7 +25,7 @@ Link to game:  <a href="http://designer-panda-48702.bitballoon.com/">Game of Lif
 
 
 
-<h3>(Beta)</h3> <p>Winning involves reaching the end of the board without going bankrupt. Final score will include money in bank , in addition + 50,000 for every child + 25,000 if still married and $100,000 for every life point accumulated.</p>
+<h3>(Almost)</h3> <p>Winning involves reaching the end of the board without going bankrupt. Final score will include money in bank , in addition + 50,000 for every child + 25,000 if still married and $100,000 for every life point accumulated.</p>
 
 
 <h3>2.0 - Future versions will include:</h3>
