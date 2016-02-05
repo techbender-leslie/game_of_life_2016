@@ -7,33 +7,55 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
   <script src="game.js"></script>
 </head>
+
+<header>  
+</header>
+
 <body>
-  <div class="start">
-    <h1>START <br>HERE <br> X</h1>
-    <button>Toggle between hide() and show()</button>
-    <br>
+<div class="start">
+  <h2>ROLL THE </br>DICE</h2>
+    <div class="dice" id="die1">&nbsp;</div> 
+      <button onclick="rollDice()">Click Here</button>
+      <h2 id="status" style="clear:left;"></h2>
+      <hr>
+      <h3>Player Name:</h3>
+      <h3 id="name-data" style="color:blue" onclick="enterName()">Enter name here</h3>
+      <h3>Cash: </h3>
+      <h3 id="cash-data" style="color:blue">$50,000 </h3>
+      <h3>Relationship Status: </h3>
+      <h3 id="relationship-data" style="color:blue">Single</h3>
+      <h3>LIFE Points: </h3>
+      <h3 id="life-point-data" style="color:blue">1</h3>
+      <h3>Children: </h3>
+      <h3 id="kid-data" style="color:blue">0</h3>
+    </div>
+</div>
+
+<div class= "logo-span">
+  <img src="https://cf.press.discovery.com/cache/ugc/photos/Gol_Logo.e4cef8a201a2.jpg">
   </div>
 
   <div class="board">
-  <br>
-    <div class="row" id="r1">
-      <div class="cell" data-spot-id="1">1</div>
-      <div class="cell" data-spot-id="2">2</div>
-      <div class="cell" data-spot-id="3">3</div>
-      <div class="cell" data-spot-id="4">4</div>
-      <div class="cell" data-spot-id="5">5</div>
-      <div class="cell" data-spot-id="6">6</div>   
+    <div class="row" id="r1" align="center">
+      <div class="cell player"><h2><b>START HERE</b></h2><p>Welcome to college</p></div>
+      <div class="cell"><p>Accepted into <br>Top 10 College <br><strong>+ 1 LP</strong></p></div>
+      <div class="cell"><p>Borrow<br><b>$45,000</b> for <br>Student Loans</p></div>
+      <div class="cell"><p>Live in your parents basement for 3 years<br><b> - 1 LP<br> +$5,000</b></p></div>
+      <div class="cell" ><p>Spring Break in Italy with besties<br><b>+ 1 LP <br> -$4,000</b></div>
+      <div class="cell">Graduate with<br> Honors in STEM<br> <b>$80,000 <br>signing bonus</b></div>   
     </div>
 
-    <div class="row" id="r2">
-      <div class="cell" ></div>
+    <div class="row" id="r2" align="center">
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="12">12</div>    
+      <div class="cell"></div>
+      <div class="cell" style="background-color:green"><p>PAYDAY!<br>Collect<br> <strong>$15,000</strong></p></div>    
     </div>
 
     <div class="row" id="r3">
@@ -42,20 +64,20 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="18">18</div>
+      <div class="cell"><p>Move to <br>SAN FRANCISCO<br><b>-$12,000 <br>+ 2 LP</b></p></div>
     </div>
 
-    <div class="row" id='r4'>
-      <div class="cell" data-spot-id="24">19</div>
-      <div class="cell" data-spot-id="23">20</div>
-      <div class="cell" data-spot-id="22">21</div>
-      <div class="cell" data-spot-id="21">22</div>
-      <div class="cell" data-spot-id="20">23</div>
-      <div class="cell" data-spot-id="19">24</div>
+    <div class="row" id='r4' align="center">
+      <div class="cell"></div>
+      <div class="cell"><p>Awared "Innovative Person of the Year"<br><b>$100,000<br>+ 1 LP</b></p></div>
+      <div class="cell"><p>Your tech start-up goes belly up<br> <b>-$75,000</b></div>
+      <div class="cell">22</div>
+      <div class="cell">23</div>
+      <div class="cell">24</div>
     </div>
 
     <div class="row" id='r5'>
-      <div class="cell" data-spot-id="25">25</div>
+      <div class="cell">25</div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -65,12 +87,12 @@
 
 
     <div class="row" id='r6'>
-      <div class="cell" data-spot-id="31">31</div>
-      <div class="cell" data-spot-id="32">32</div>
-      <div class="cell" data-spot-id="33">33</div>
-      <div class="cell" data-spot-id="34">34</div>
-      <div class="cell" data-spot-id="35">35</div>
-      <div class="cell" data-spot-id="36">36</div>
+      <div class="cell">31</div>
+      <div class="cell">32</div>
+      <div class="cell">33</div>
+      <div class="cell">34</div>
+      <div class="cell">35</div>
+      <div class="cell">36</div>
     </div>
 
     <div class="row" id='r7'>
@@ -79,7 +101,7 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="42">42</div>
+      <div class="cell">42</div>
     </div>
 
     <div class="row" id='r8'>
@@ -88,21 +110,21 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="48">48</div>
+      <div class="cell">48</div>
     </div>
 
     <div class="row" id='r9'>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="54">50</div>
-      <div class="cell" data-spot-id="53">51</div>
-      <div class="cell" data-spot-id="52">52</div>
-      <div class="cell" data-spot-id="51">53</div>
-      <div class="cell" data-spot-id="50">54</div>
+      <div class="cell">50</div>
+      <div class="cell">51</div>
+      <div class="cell">52</div>
+      <div class="cell">53</div>
+      <div class="cell">54</div>
     </div>
       
     <div class="row" id='r10'>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="56">56</div>
+      <div class="cell">56</div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -111,7 +133,7 @@
 
     <div class="row" id='r11'>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="62">62</div>
+      <div class="cell">62</div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -120,10 +142,10 @@
 
     <div class="row" id='r12'>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="68">68</div>
-      <div class="cell" data-spot-id="69">69</div>
-      <div class="cell" data-spot-id="70">70</div>
-      <div class="cell" data-spot-id="71">71</div>
+      <div class="cell">68</div>
+      <div class="cell">69</div>
+      <div class="cell">70</div>
+      <div class="cell">71</div>
       <div class="cell"></div>    
     </div>
 
@@ -132,21 +154,21 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-spot-id="77">77</div>
+      <div class="cell">77</div>
       <div class="cell"></div>
     </div> 
 
     <div class="row" id='r14'>
-      <div class="cell" data-spot-id="83">79</div>
-      <div class="cell" data-spot-id="82">80</div>
-      <div class="cell" data-spot-id="81">81</div>
-      <div class="cell" data-spot-id="80">82</div>
-      <div class="cell" data-spot-id="79" >83</div>
+      <div class="cell">79</div>
+      <div class="cell">80</div>
+      <div class="cell">81</div>
+      <div class="cell">82</div>
+      <div class="cell">83</div>
       <div class="cell"></div>
     </div>
 
     <div class="row" id='r15'>
-      <div class="cell" data-spot-id="85">85</div>
+      <div class="cell">85</div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -155,18 +177,25 @@
     </div>
 
     <div class="row" id='r16'>
-      <div class="cell" data-spot-id="91">91</div>
-      <div class="cell" data-spot-id="92">92</div>
-      <div class="cell" data-spot-id="93">93</div>
-      <div class="cell" data-spot-id="94">94</div>
-      <div class="cell" data-spot-id="95">95</div>
-      <div class="cell" data-spot-id="96">96</div>
+      <div class="cell">91</div>
+      <div class="cell">92</div>
+      <div class="cell">93</div>
+      <div class="cell">94</div>
+      <div class="cell">95</div>
+      <div class="cell">96</div>
     </div>
+    <br>
+
+    <div class="end">
+    <h1>END <br>HERE <br> X</h1>
+    
+    <br>
+  </div>
 
   </div> <!--close board -->
 </body>
 <script type="text/javascript">
   assignIds();
-  assignGameSpots();
+  // assignGameSpots();
 </script>
 </html>

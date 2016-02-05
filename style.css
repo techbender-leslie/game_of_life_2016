@@ -1,41 +1,139 @@
 body {
-  background: url('cool_game_background.jpeg') no-repeat center center;
+  background: url('green_pattern_background.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color: yellowgreen;
-  margin-top:100px;
+  font-family: 'Lato', sans-serif;
+  margin-top:50px;
   width: 100%;
 }
 
+img {
+  width: 60%;
+  height: 60%;
+  margin-left: 400px;
+  /*margin-right: 250px;*/
+  margin-bottom: 50px;
+  text-align: center;
+  
+}
+
+.row {
+  vertical-align: center;
+}
+
+#r2,
+#r3,
+#r7 {
+  margin:25px;
+}
+
+
 .start {
-  border: 3px black solid;
+  position: fixed;
+  text-align: center;
+  width: 180px;
+  background: black;
+  color: white;
+  padding: 10px;
+  margin-left: 20px;
+
+}
+
+.start h2 {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #001F3F;
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+
+
+.dice{
+  color: black;
+  border-radius: 10px;
+  width:32px;
+  background: white;
+  border:black 3px solid;
+  padding:10px;
+  font-size:24px;
+  font-weight: 900;
+  text-align:center;
+  margin-left:60px;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 40px;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
+}
+
+
+.board {
+  margin-left: 300px;
+}
+
+.board .row .cell {
+  height: 95px;
+  width: 160px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  /*padding-top: 25px;*/
+}
+
+
+.game-spot {
+  background-color: orange;
+  border: 2px black solid;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*animation: pulse 3s ease infinite alternate;*/
+}
+
+.player {
+  background-color: #62C6B4;
+}
+
+/*this goes with the animation pulse line above*/
+/*@keyframes pulse {
+  0% {
+    background-color: #001F3F;
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}*/
+/*.tooltip {
+  background-color: white;
+  color: darkblue;
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+
+}*/
+
+.end {
   margin-left: 50px;
   margin-bottom: 25px;
+  margin-right:365px;
   height:150px;
   width: 180px;
   background-color: black;
   color: white;
   text-align: center;
-}
-
-.board {
-  margin-left: 50px;
-}
-
-.board .row .cell {
+  float:right;
   
-  height: 70px;
-  width: 180px;
-  display: inline-block;
-  margin: 5px;
-  text-align: center;
-  padding-top: 50px;
 }
 
-.game-spot {
-  background-color: orange;
-  border: 2px black solid;
-}
 

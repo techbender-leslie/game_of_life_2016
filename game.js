@@ -16,43 +16,104 @@ var gameSpots= [1,2,3,4,5,6,
           83,82,81,80,79,
           85,
           91,92,93,94,95,96];
+
+// var current_gs = gameSpots[0];
+// spotospots = [];
+
  
 $(function() {
   console.log( "window loaded" );
 
+
+// function spoto() {
+//   spotospots = [];
+//     $('.cell.game-spot').each(function (index, value) {
+//     spotospots.push(index);
+//   });
+//     return spotospots;
+// }
+
+
   //this part grabs all the cells, changes the background color and adds text, just to test out jquery
-  var $boxes = $(".cell");
+  // var $boxes = $(".cell");
   // $boxes.css("background-color","white");
 
 
   //just a practice toggle button
-  $("button").click(function(){
-    var switches = $boxes.html("Hello, little boxes");
-    $(switches).toggle();
-  });
-
-  //Here I use .each on gameSpots array
-  $.each(gameSpots, function (index, value) {
-    // console.log(index + ":" + value);
-  });
-
-  //Here I use .each on cell class
-  $('.cell').each(function (index,value) {
-    // console.log(index);
-  });
-  //_______________________________________________
-
+  // $("button").click(function(){
+  //   var switches = $boxes.html("Hello, little boxes");
+  //   $(switches).toggle();
+  // });
 });
+
 
 function assignIds() {
   // give all cells an id starting with 1 at the top-left cell
   $(".cell").each(function (index, cell) {
-    $(cell).attr("id", index + 1);
+    var id = index + 1;
+    $(cell).attr("id", "c" + id);
   });
+  assignGameSpots();
 }
 
 function assignGameSpots() {
   $(gameSpots).each(function (index, value) {
-    $("#" + value).addClass("game-spot");
+    var spin = $("#c" + value).addClass("game-spot");
+    var id= index + 1;
+    $(spin).attr("id", "c" + id);
   });
 }
+
+function enterName() {
+  var person = prompt("Please enter your name", "Hipster #1");
+  document.getElementById("name-data").innerHTML =
+    person;
+}
+
+function rollDice(){
+    var sound = new Audio("shaking_dice.mp3"); // buffers automatically when created
+    sound.play();
+
+    var die1 = document.getElementById("die1");
+    var status = document.getElementById("status");
+
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    diceTotal = d1;
+    die1.innerHTML = d1;
+    
+    status.innerHTML = "You rolled: "+ diceTotal;
+    move(diceTotal);
+}
+
+function move(roll) {
+  //grab current player
+
+  var player = $(".player");
+  //grab player's id
+  var id = player.attr("id");
+  //pick up player
+  player.toggleClass("player");
+  //figure out what position on the board player is on from it's id
+  var idLength = id.length;
+  var newId = parseInt(id.split('').splice(1,idLength).join(""));
+  //calculate a new position based on the roll
+
+
+  var newPostionID = newId + roll;
+  //target the position the player will move to
+  var newPosition = $("#c" + newPostionID);
+
+  //wait some time & move the player to the new position
+  setTimeout(function() {
+    // alert("Moving you to new spot");
+    newPosition.toggleClass("player"); }, 1500);
+}
+
+
+
+// ---------------------------------------------------
+
+
+
+
+
