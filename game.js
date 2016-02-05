@@ -17,13 +17,19 @@ var gameSpots= [1,2,3,4,5,6,
           85,
           91,92,93,94,95,96];
 
+var playerCash=0;
+var lifePoints=0;
+
 
  
 $(function() {
   console.log( "window loaded" );
 
-playerCash = 80000;
-playerLifePoints = 0;
+// playerCash = 0;
+// document.getElementById("cash-data").innerHTML = playerCash;
+
+// // lifePoints= 0;
+// document.getElementById("life-point-data").innerHTML = lifePoints;
   //this part grabs all the cells, changes the background color and adds text, just to test out jquery
   // var $boxes = $(".cell");
   // $boxes.css("background-color","white");
@@ -114,22 +120,50 @@ function move(roll) {
   var idLength = id.length;
   var newId = parseInt(id.split('').splice(1,idLength).join(""));
   //calculate a new position based on the roll
-  var newPostionID = newId + roll;
+  var newPositionID = newId + roll;
   //target the position the player will move to
-  var newPosition = $("#c" + newPostionID);
+  var newPosition = $("#c" + newPositionID);
 
+  newPosition.toggleClass("player");
+
+
+  document.getElementById("cash-data").innerHTML = playerCash;
+  // document.getElementById("life-point-data").innerHTML = lifePoints;
+  var getMoney = $("#c" + newPositionID).attr('data-ma');
+  var convertCash = parseInt(getMoney);
+  playerCash = (playerCash + convertCash);
+  document.getElementById("cash-data").innerHTML = playerCash;
+
+  document.getElementById("cash-data").innerHTML = playerCash;
+  // document.getElementById("life-point-data").innerHTML = lifePoints;
+  var getMoney = $("#c" + newPositionID).attr('data-md');
+  var convertCash = parseInt(getMoney);
+  playerCash = (playerCash - convertCash);
+  document.getElementById("cash-data").innerHTML = playerCash;
+
+
+  
+  document.getElementById("life-point-data").innerHTML = lifePoints;
+  var getPoints = $("#c" + newPositionID).attr('data-lpa');
+  var convertPoints = parseInt(getPoints);
+  lifePoints = (lifePoints + convertPoints);
+  document.getElementById("life-point-data").innerHTML = lifePoints;
+
+}
+
+
+  // function updateCash() {
+  //   var addCash = parseInt($(newPostion).attr('data-ma'));
+  //   var bank = document.getElementById("cash-data");
+
+  //   playerCash = playerCash + addCash;
+  //   bank.innerHTML = playerCash;
+  // }
   //wait some time & move the player to the new position
-  setTimeout(function() {
-    // alert("Moving you to new spot");
-    newPosition.toggleClass("player"); }, 1500);
-
+  
 
   // var addPlayerCash = (function() {
-    var addCash = parseInt($(newPostion).attr('data-ma'));
-    var bank = document.getElementById("cash-data");
-
-    playerCash = playerCash + addCash;
-    bank.innerHTML = playerCash;
+    
 
   // var addPlayerLP = (function() {
   //   var addPoints = $(this).attr('data-lpa');
@@ -145,7 +179,7 @@ function move(roll) {
   // });
 
 
-} //end or move
+ //end or move
 
 // ---------------------------------------------------
 
