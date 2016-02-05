@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>The Game of Life</title>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -12,7 +12,7 @@
   <script src="game.js"></script>
 </head>
 
-<header>  
+<header>
 </header>
 
 <body>
@@ -25,7 +25,7 @@
       <h3>Player Name:</h3>
       <h3 id="name-data" style="color:blue" onclick="enterName()">Enter name here</h3>
       <h3>Cash: </h3>
-      <h3 id="cash-data" style="color:blue">$50,000 </h3>
+      <h3 id="cash-data" style="color:blue">$80,000 </h3>
       <h3>Relationship Status: </h3>
       <h3 id="relationship-data" style="color:blue">Single</h3>
       <h3>LIFE Points: </h3>
@@ -41,12 +41,12 @@
 
   <div class="board">
     <div class="row" id="r1" align="center">
-      <div class="cell player"><h2><b>START HERE</b></h2><p>Welcome to college</p></div>
-      <div class="cell"><p>Accepted into <br>Top 10 College <br><strong>+ 1 LP</strong></p></div>
-      <div class="cell"><p>Borrow<br><b>$45,000</b> for <br>Student Loans</p></div>
-      <div class="cell"><p>Live in your parents basement for 3 years<br><b> - 1 LP<br> +$5,000</b></p></div>
-      <div class="cell" ><p>Spring Break in Italy with besties<br><b>+ 1 LP <br> -$4,000</b></div>
-      <div class="cell">Graduate with<br> Honors in STEM<br> <b>$80,000 <br>signing bonus</b></div>   
+      <div class="cell player" data-lpa="0" data-lpd="0" data-ma="0" data-md="0"><h2><b>START HERE</b></h2></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Accepted into ivy league college - your network grows <br><b> + 1 LP</b></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="45000"><p>Searching for the meaning of life. <br>Borrow<b> $45,000</b> <br>in student loans</p></div>
+      <div class="cell" data-lpa="0" data-lpd="1" data-ma="10000" data-md="0"><p>Live in your parents basement- save $,<br> but lose self respect<br><b> - 1 LP<br> +$10,000</b></p></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="4000"><p>Spring Break in Italy & France with "besties"<br><b>+ 1 LP <br> -$4,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="80000" data-md="0"><p>Graduate with<br> Honors in STEM<br> <b>$80,000 <br>signing bonus</b></p></div>   
     </div>
 
     <div class="row" id="r2" align="center">
@@ -55,29 +55,29 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" style="background-color:green"><p>PAYDAY!<br>Collect<br> <strong>$15,000</strong></p></div>    
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="15000" data-md="0"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $15,000</b></p></div>    
     </div>
 
-    <div class="row" id="r3">
+    <div class="row" id="r3" align="center">
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell"><p>Move to <br>SAN FRANCISCO<br><b>-$12,000 <br>+ 2 LP</b></p></div>
+      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="12000"><p>Welcome to <br>SAN FRANCISCO<br>Now pay up:<br><b>- $12,000 <br>+ 2 LP</b></p></div>
     </div>
 
     <div class="row" id='r4' align="center">
-      <div class="cell"></div>
-      <div class="cell"><p>Awared "Innovative Person of the Year"<br><b>$100,000<br>+ 1 LP</b></p></div>
-      <div class="cell"><p>Your tech start-up goes belly up<br> <b>-$75,000</b></div>
-      <div class="cell">22</div>
-      <div class="cell">23</div>
-      <div class="cell">24</div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Happy Birthday! Friends and family give you party of a lifetime<br> <b>+ 1 LP</b></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="20000" data-md="0"><p>"Discovered" one Saturday in Nob Hill. Local modeling contract <b>+ $20,000</b></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Early life crisis,<br> teach abroad in Brazil for 1 year and live life to the fullest! <br><b>+ 1 LP</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="25000"><p>Fall in love, <br>high profile engagement<br><b>- $25,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="15000"><p>Rent and furnish new high-rise apartment in Financial District<br><b>- $15,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="25000" data-md="0"><p>You were your grandmother's favorite - suddenly inherit <br><b>+ $25,000</b></p></div>
     </div>
 
-    <div class="row" id='r5'>
-      <div class="cell">25</div>
+    <div class="row" id='r5' align="center">
+      <div class="cell"><p>Move out somewhere more affordable, commute is horrible <br><b>- 1 LP</b></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -86,22 +86,22 @@
     </div>
 
 
-    <div class="row" id='r6'>
-      <div class="cell">31</div>
-      <div class="cell">32</div>
-      <div class="cell">33</div>
-      <div class="cell">34</div>
-      <div class="cell">35</div>
-      <div class="cell">36</div>
+    <div class="row" id='r6' align="center">
+      <div class="cell"><p>Car totaled during El Nino downpour, you were under insuranced<br> <b>- $10,000</b></p></div>
+      <div class="cell"><p>Best friend scores VIP all access to see your favorite artist<br> <b>+ 1 LP</b></div>
+      <div class="cell"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $25,000</b></p></div>
+      <div class="cell"><p>Take up surfing<br> on the weekends, top of the line gear<br> <b>-$5,000</b></div>
+      <div class="cell"><p>GET MARRIED! Congrations!<br> True love, small wedding with friends <br><b>+ 2 LP</b></p></div>
+      <div class="cell"><p>Welcome to the world baby you! Your first child is born!<br><b> +2 LP</b></div>
     </div>
 
-    <div class="row" id='r7'>
+    <div class="row" id='r7' align="center">
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell">42</div>
+      <div class="cell"><p>Step up your <br>charitable acts, donate <b>$10,000</b> to homeless shelter in the TL</p></div>
     </div>
 
     <div class="row" id='r8'>
@@ -110,21 +110,21 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell">48</div>
+      <div class="cell"><p>Awared "Distruptive Innovator of the Year"<br><b>+ $125,000<br>+ 1 LP</b></p></div>
     </div>
 
     <div class="row" id='r9'>
       <div class="cell"></div>
-      <div class="cell">50</div>
-      <div class="cell">51</div>
-      <div class="cell">52</div>
-      <div class="cell">53</div>
-      <div class="cell">54</div>
+      <div class="cell"><p>Purchase small, local bookstore- needs renovation and new stock<b>- $30,000</b></div>
+      <div class="cell"><p>Your tech start-up<br> goes belly up- <br> <b>you owe $75,000<br> to investors</b></p></div>
+      <div class="cell"><p>Caught cheating, significant other makes your life a living hell<br><b> -1 LP</b></p></div>
+      <div class="cell"><p>Twins are born! Congratulations on a baby boy & baby girl<br><b>+ 2 LP</b></div>
+      <div class="cell"><p>Web Development Immersive pays off, start a new career! PAYDAY<b> + $35,000</b></p></div>
     </div>
       
     <div class="row" id='r10'>
       <div class="cell"></div>
-      <div class="cell">56</div>
+      <div class="cell"><p>Your first novel <br>climbs up Amazon's Best Seller List <br><b>+ $40,000</b></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -133,7 +133,7 @@
 
     <div class="row" id='r11'>
       <div class="cell"></div>
-      <div class="cell">62</div>
+      <div class="cell"><p>Old college roommate ropes you into health suppliment ponzy scheme- <b>lose $10,000</b></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -142,10 +142,10 @@
 
     <div class="row" id='r12'>
       <div class="cell"></div>
-      <div class="cell">68</div>
-      <div class="cell">69</div>
-      <div class="cell">70</div>
-      <div class="cell">71</div>
+      <div class="cell"><p>Nothing significant happens here. Take<br> a deep breath and <br>relax a little :)</p></div>
+      <div class="cell"><p>File for divorce, irreconsiable differences. C'est la vie, lawyer <b>- $20,000</b></p></div>
+      <div class="cell"><p>Meet Elon Musk at a technolgy conference, he loved your new ideas. <b>+ 1 LP</b></div>
+      <div class="cell"><p>PAYDAY is here! You are well established in your career- <br><b>Collect $50,000</b></p></div>
       <div class="cell"></div>    
     </div>
 
@@ -154,21 +154,21 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell">77</div>
+      <div class="cell"><p>Win small Petaluma dairy farm and cheesery in raffle- already profitable!<br> <b>+ $10,000</b></p></div>
       <div class="cell"></div>
     </div> 
 
     <div class="row" id='r14'>
-      <div class="cell">79</div>
-      <div class="cell">80</div>
-      <div class="cell">81</div>
-      <div class="cell">82</div>
-      <div class="cell">83</div>
+      <div class="cell"><p>Knee replacement surgery necessary. Insurance doesn't cover it<b>- $14,000</b></p></div>
+      <div class="cell"><p>Parents need to move into permanent assisted living center <br><b>-$20,000</b></div>
+      <div class="cell">Your company flies entire family to <br>Japan for summer workshops <br><b>+ 1 LP</b></p></div>
+      <div class="cell"><p>Termites rot out your fancy Victorian home, major repairs needed<br> <b>- $160,000</b></p></div>
+      <div class="cell"><p>Your stocks have been up all year. Enjoy the windfall<br><b>+ $250,000</b></p></div>
       <div class="cell"></div>
     </div>
 
     <div class="row" id='r15'>
-      <div class="cell">85</div>
+      <div class="cell"><p>Career pivots into consulting and board <br> of director's position<br> <b>+$200,000</b></p></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -177,12 +177,12 @@
     </div>
 
     <div class="row" id='r16'>
-      <div class="cell">91</div>
-      <div class="cell">92</div>
-      <div class="cell">93</div>
-      <div class="cell">94</div>
-      <div class="cell">95</div>
-      <div class="cell">96</div>
+      <div class="cell"><p>Find excellent retirement villa in the Mexican Riviera. <br>Life is good<b> + 1 LP</b></p></div>
+      <div class="cell"><p>Donate your time and money to end <br> world hunger<br><b>- $25,000 <br>+1 LP</b></p></div>
+      <div class="cell"><p>Your first round of grandchildren are born, and they are awesome. <b>+ 3 LP</b></p></div>
+      <div class="cell"><p>Discover stock pile of gold while going through family treasure chest <b>+ $500,000</b></p></div>
+      <div class="cell"><p>Swim with dolphins, save the whales and spend your winters in Hawaii<b> +1 LP</b></p></div>
+      <div class="cell">Having enough and <br> not needing to <br> work again: <br><b> PRICELESS</b><p></div>
     </div>
     <br>
 

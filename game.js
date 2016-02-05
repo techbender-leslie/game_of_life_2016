@@ -17,23 +17,13 @@ var gameSpots= [1,2,3,4,5,6,
           85,
           91,92,93,94,95,96];
 
-// var current_gs = gameSpots[0];
-// spotospots = [];
 
  
 $(function() {
   console.log( "window loaded" );
 
-
-// function spoto() {
-//   spotospots = [];
-//     $('.cell.game-spot').each(function (index, value) {
-//     spotospots.push(index);
-//   });
-//     return spotospots;
-// }
-
-
+playerCash = 80000;
+playerLifePoints = 0;
   //this part grabs all the cells, changes the background color and adds text, just to test out jquery
   // var $boxes = $(".cell");
   // $boxes.css("background-color","white");
@@ -58,11 +48,39 @@ function assignIds() {
 
 function assignGameSpots() {
   $(gameSpots).each(function (index, value) {
-    var spin = $("#c" + value).addClass("game-spot");
-    var id= index + 1;
-    $(spin).attr("id", "c" + id);
+    $("#c" + value).addClass("game-spot"); 
   });
+  removeIds();
 }
+
+function removeIds() {
+  $(".cell").each(function (index, cell) {
+    $(cell).removeAttr('id');
+  });
+  assignFinalIds();
+}
+
+function assignFinalIds() {
+  $(".game-spot").each(function (index, spot) {
+    var id= index + 1;
+    $(spot).attr("id", "c" + id);
+  });
+  }
+
+// function assignFinalIds() {
+//   $(gameSpots).attr("id", function (index, cell) {
+//     var id= index + 1;
+//     return ("#c" + id);
+//   });
+// }
+
+// function assignFinalIds() {
+//   $.each(gameSpots, function (index, cell) {
+//     var id= index + 1;
+//     $("#c" + id).attr('id');
+//   }); 
+// }
+
 
 function enterName() {
   var person = prompt("Please enter your name", "Hipster #1");
@@ -87,7 +105,6 @@ function rollDice(){
 
 function move(roll) {
   //grab current player
-
   var player = $(".player");
   //grab player's id
   var id = player.attr("id");
@@ -97,8 +114,6 @@ function move(roll) {
   var idLength = id.length;
   var newId = parseInt(id.split('').splice(1,idLength).join(""));
   //calculate a new position based on the roll
-
-
   var newPostionID = newId + roll;
   //target the position the player will move to
   var newPosition = $("#c" + newPostionID);
@@ -107,9 +122,30 @@ function move(roll) {
   setTimeout(function() {
     // alert("Moving you to new spot");
     newPosition.toggleClass("player"); }, 1500);
-}
 
 
+  // var addPlayerCash = (function() {
+    var addCash = parseInt($(newPostion).attr('data-ma'));
+    var bank = document.getElementById("cash-data");
+
+    playerCash = playerCash + addCash;
+    bank.innerHTML = playerCash;
+
+  // var addPlayerLP = (function() {
+  //   var addPoints = $(this).attr('data-lpa');
+
+  // });
+
+  // var deductPlayerCash = (function() {
+  //   var takeCash= $(this).attr('data-md');
+  // });
+
+  // var deductPlayerLifePoints = (function() {
+  //   var takePoints = $(this).attr('data-lpd');
+  // });
+
+
+} //end or move
 
 // ---------------------------------------------------
 
