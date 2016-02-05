@@ -38,6 +38,6 @@ Link to game:  <a href="http://designer-panda-48702.bitballoon.com/">Game of Lif
 
 -JavaScript pop up boxes showing results of spot.
 
-<h3>Shout outs: Thanks for all the good energy in class this week. It is great to be around such creatived and motivate people. Special thanks to Illias
+<h3>Shout outs: Thanks for all the good energy in class this week. It is great to be around such creatived and motivate people. Special thanks to Ilias
 
 <h3>Feel free to contribute in any way, all pull requests will be reviewed and most likely considered :)</h3>
