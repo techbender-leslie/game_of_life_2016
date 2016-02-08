@@ -90,22 +90,22 @@ function assignFinalIds() {
 
 function enterName() {
   var person = prompt("Please enter your name", "Hipster #1");
-  document.getElementById("name-data").innerHTML =
-    person;
+    if (person == ""){
+      alert("please re-enter name");
+      enterName();
+    } 
+    else {
+      $("#name-data").html(person);
+    }
 }
 
 function rollDice(){
+    var d1 = Math.floor(Math.random() * 6) + 1; //math for rolling dice. 
     var sound = new Audio("shaking_dice.mp3"); // buffers automatically when created
     sound.play();
-
-    var die1 = document.getElementById("die1");
-    var status = document.getElementById("status");
-
-    var d1 = Math.floor(Math.random() * 6) + 1;
     diceTotal = d1;
-    die1.innerHTML = d1;
-    
-    status.innerHTML = "You rolled: "+ diceTotal;
+    $("#die1").html(d1);
+    var status = $("#status").html("You rolled: "+ diceTotal);
     move(diceTotal);
 }
 
