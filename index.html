@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,39 +15,68 @@
 <header>
 </header>
 
-<body>
-<div class="start">
-  <h2>ROLL THE </br>DICE</h2>
+<body onload="popup('popUpDiv')">
+  <div class="start">
+  <hr>
     <div class="dice" id="die1">&nbsp;</div> 
-      <button onclick="rollDice()">Click Here</button>
+      <button onclick="rollDice()"><h1>ROLL THE </br>DICE</h1></button>
       <h2 id="status" style="clear:left;"></h2>
       <hr>
       <h3>Player Name:</h3>
-      <h3 id="name-data" style="color:blue" onclick="enterName()">Enter name here</h3>
-      <h3>Cash: </h3>
-      <h3 id="cash-data" style="color:blue"></h3>
-      <h3>Relationship Status: </h3>
-      <h3 id="relationship-data" style="color:blue">Single</h3>
-      <h3>LIFE Points: </h3>
-      <h3 id="life-point-data" style="color:blue">1</h3>
-      <h3>Children: </h3>
-      <h3 id="kid-data" style="color:blue">0</h3>
-    </div>
-</div>
+      <h3 id="name-data" style="color:orange" onclick="enterName()">Enter name here</h3>
 
-<div class= "logo-span">
-  <img src="https://cf.press.discovery.com/cache/ugc/photos/Gol_Logo.e4cef8a201a2.jpg">
+      <h3>Cash: </h3>
+      <h2 id="cash-data" style="color:orange">0</h2>
+
+      <h3>LIFE Points: </h3>
+      <h2 id="life-point-data" style="color:orange">0</h2>
+
+      <h3>Children: </h3>
+      <h2 id="kid-data" style="color:orange">0</h2>
+
+      <h3>Stocks & Bonds: </h3>
+      <h2 id="stock-data" style="color:orange">0</h2>
+    </div>
+  </div>
+
+  <!-- end of side bar player stats -->
+
+  <div id="blanket" style="display:none"></div>
+  <div id="popUpDiv" style="display:none">
+  <h1>Congratulations! <br> You have completed the game of Life!</h1>
+  <h2>We are compiling your game stats now...</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <a href="#" onclick="popup('popUpDiv')" >Click to Close</a>
+  </div>
+  
+
+<!-- the rest of body is after this -->
+
+  <div class= "logo-span">
+    <img src="https://cf.press.discovery.com/cache/ugc/photos/Gol_Logo.e4cef8a201a2.jpg">
   </div>
 
   <div class="board">
     <div class="row" id="r1" align="center">
-      <div class="cell player" data-lpa="0" data-lpd="0" data-ma="0" data-md="0"><h2><b>START HERE</b></h2></div>
-      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Accepted into ivy league college - your network grows <br><b> + 1 LP</b></div>
+      <div class="cell player" data-lpa="0" data-lpd="0" data-ma="0" data-md="0"><h2><b>START HERE <br> ~~> </b></h2></div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Accepted into <br>ivy league college <br>- your network grows <br><b> + 1 LP</b></p></div>
+
       <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="45000"><p>Searching for the meaning of life. <br>Borrow<b> $45,000</b> <br>in student loans</p></div>
+
       <div class="cell" data-lpa="0" data-lpd="1" data-ma="10000" data-md="0"><p>Live in your parents basement- save $,<br> but lose self respect<br><b> - 1 LP<br> +$10,000</b></p></div>
-      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="4000"><p>Spring Break in Italy & France with "besties"<br><b>+ 1 LP <br> -$4,000</b></p></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="80000" data-md="0"><p>Graduate with<br> Honors in STEM<br> <b>$80,000 <br>signing bonus</b></p></div>   
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="4000"><p>Spend Spring Break in Italy and then, France, with "besties"<br><b>+ 1 LP <br> -$4,000</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="80000" data-md="0"><p>Graduate with honors <br>in STEM field. Land job in nanotech- <br><b>+ $80,000 <br> signing bonus</b></p></div>
     </div>
+
 
     <div class="row" id="r2" align="center">
       <div class="cell"></div>
@@ -55,8 +84,9 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="15000" data-md="0"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $15,000</b></p></div>    
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="15000" data-md="0"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $15,000</b></p></div>
     </div>
+
 
     <div class="row" id="r3" align="center">
       <div class="cell"></div>
@@ -64,20 +94,35 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="12000"><p>Welcome to <br>SAN FRANCISCO<br>Now pay up:<br><b>- $12,000 <br>+ 2 LP</b></p></div>
+
+      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="12000"><p>Welcome to SAN FRANCISCO, it's not 'Frisco'. Now pay up: <br><b>-$12,000<br> + 2LP</b></p>
+      </div>
     </div>
 
     <div class="row" id='r4' align="center">
-      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Happy Birthday! Friends and family give you party of a lifetime<br> <b>+ 1 LP</b></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="20000" data-md="0"><p>"Discovered" one Saturday in Nob Hill. Local modeling contract <b>+ $20,000</b></div>
-      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Early life crisis,<br> teach abroad in Brazil for 1 year and live life to the fullest! <br><b>+ 1 LP</b></p></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="25000"><p>Fall in love, <br>high profile engagement<br><b>- $25,000</b></p></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="15000"><p>Rent and furnish new high-rise apartment in Financial District<br><b>- $15,000</b></p></div>
-      <div class="cell" data-lpa="0" data-lpd="0" data-ma="25000" data-md="0"><p>You were your grandmother's favorite - suddenly inherit <br><b>+ $25,000</b></p></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Happy Birthday! Friends and family give you party of a lifetime<br> <b>+ 1 LP</b>
+      </div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="20000" data-md="0"><p>"Discovered" one Saturday in Nob Hill. Local modeling contract <b>+ $20,000</b>
+      </div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Early life crisis,<br> teach abroad in Brazil for 1 year and live life to the fullest! <br><b>+ 1 LP</b></p>
+      </div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="25000"><p>Meet someone great while out in the Mission- fall in love, high profile engagement<b><br>- $25,000</b></p>
+      </div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="15000"><p>Rent and furnish new high-rise studio in Financial District<br><b>- $15,000</b></p>
+      </div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="25000" data-md="0"><p>You were your grandmother's favorite - suddenly inherit <br><b>+ $25,000</b></p>
+      </div>
     </div>
 
+
     <div class="row" id='r5' align="center">
-      <div class="cell"><p>Move out somewhere more affordable, commute is horrible <br><b>- 1 LP</b></div>
+      <div class="cell" data-lpa="0" data-lpd="1" data-ma="5000" data-md="0"><p>Move somewhere <br> more affordable, the commute is horrible <br><b>+ $5,000 <br>- 1 LP</b></div>
+
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -87,13 +132,19 @@
 
 
     <div class="row" id='r6' align="center">
-      <div class="cell"><p>Car totaled during El Nino downpour, you were under insuranced<br> <b>- $10,000</b></p></div>
-      <div class="cell"><p>Best friend scores VIP all access to see your favorite artist<br> <b>+ 1 LP</b></div>
-      <div class="cell"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $25,000</b></p></div>
-      <div class="cell"><p>Take up surfing<br> on the weekends, top of the line gear<br> <b>-$5,000</b></div>
-      <div class="cell"><p>GET MARRIED! Congrations!<br> True love, small wedding with friends <br><b>+ 2 LP</b></p></div>
-      <div class="cell"><p>Welcome to the world baby you! Your first child is born!<br><b> +2 LP</b></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="10000"><p>Car totaled during El Nino downpour, you were under insuranced<br> <b>- $10,000</b></p></div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Best friend scores VIP all access to see your favorite artist<br> <b>+ 1 LP</b></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="25000" data-md="0"><p>Congratulations on a successful career- PAYDAY!<br> <b>+ $25,000</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="5000"><p>Take up surfing<br> on the weekends, top of the line gear<br> <b>-$5,000</b></div>
+
+      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="0"><p>GET MARRIED! Congratulations!<br> True love, small wedding with friends- <br><b>+ 2 LP</b></p></div>
+
+      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="0"><p>Welcome to the world, baby you! Your first child is BORN!<br><b> +2 LP</b></div>
     </div>
+
 
     <div class="row" id='r7' align="center">
       <div class="cell"></div>
@@ -101,7 +152,7 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell"><p>Step up your <br>charitable acts, donate <b>$10,000</b> to homeless shelter in the TL</p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="8000"><p>Be the change you <br>want to see, donate to shelter in the Tenderloin<br><b>- $8,000</b></p></div>
     </div>
 
     <div class="row" id='r8'>
@@ -110,21 +161,25 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell"><p>Awared "Distruptive Innovator of the Year"<br><b>+ $125,000<br>+ 1 LP</b></p></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="125000" data-md="0"><p>Awared "Distruptive Innovator of the Year" by TechCrunch<br><b>+ $125,000<br>+ 1 LP</b></p></div>
     </div>
 
     <div class="row" id='r9'>
       <div class="cell"></div>
-      <div class="cell"><p>Purchase small, local bookstore- needs renovation and new stock<b>- $30,000</b></div>
-      <div class="cell"><p>Your tech start-up<br> goes belly up- <br> <b>you owe $75,000<br> to investors</b></p></div>
-      <div class="cell"><p>Caught cheating, significant other makes your life a living hell<br><b> -1 LP</b></p></div>
-      <div class="cell"><p>Twins are born! Congratulations on a baby boy & baby girl<br><b>+ 2 LP</b></div>
-      <div class="cell"><p>Web Development Immersive pays off, start a new career! PAYDAY<b> + $35,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="30000"><p>Purchase small, local bookstore- needs renovation and new stock<b>- $30,000</b></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="75000"><p>Your tech start-up <br>goes belly up. You lose all starting capital. <br><b>- $75,000</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="1" data-ma="0" data-md="0"><p>Caught cheating, significant other makes your life a living hell<br><b> -1 LP</b></p></div>
+
+      <div class="cell" data-lpa="2" data-lpd="0" data-ma="0" data-md="0"><p>Twins are born! Congratulations on a BABY boy & BABY girl<br><b>+ 2 LP</b></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="35000" data-md="0"><p>Web Development Immersive pays off, start a new career! PAYDAY<b> + $35,000</b></p></div>
     </div>
       
     <div class="row" id='r10'>
       <div class="cell"></div>
-      <div class="cell"><p>Your first novel <br>climbs up Amazon's Best Seller List <br><b>+ $40,000</b></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="40000" data-md="0"><p>Your first novel <br>climbs up Amazon's Best Seller List <br><b>+ $40,000</b></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -133,7 +188,8 @@
 
     <div class="row" id='r11'>
       <div class="cell"></div>
-      <div class="cell"><p>Old college roommate ropes you into health suppliment ponzy scheme- <b>lose $10,000</b></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="10000"><p>Old college roommate ropes you into health suppliment ponzy scheme- <b>lose $10,000</b></div>
+
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -142,10 +198,14 @@
 
     <div class="row" id='r12'>
       <div class="cell"></div>
-      <div class="cell"><p>Nothing significant happens here. Take<br> a deep breath and <br>relax a little :)</p></div>
-      <div class="cell"><p>File for divorce, irreconsiable differences. C'est la vie, lawyer <b>- $20,000</b></p></div>
-      <div class="cell"><p>Meet Elon Musk at a technolgy conference, he loved your new ideas. <b>+ 1 LP</b></div>
-      <div class="cell"><p>PAYDAY is here! You are well established in your career- <br><b>Collect $50,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="0"><p>Nothing significant happens here. Take<br> a deep breath and <br>relax a little :)</p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="20000"><p>File for divorce, irreconsiable differences- c'est la vie, lawyer <b>- $20,000</b></p></div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Meet Elon Musk at a technolgy conference, he loved your new ideas <b>+ 1 LP</b></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="50000" data-md="0"><p>PAYDAY is here! You are well established in your career- <br><b>Collect $50,000</b></p></div>
+
       <div class="cell"></div>    
     </div>
 
@@ -154,21 +214,26 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
-      <div class="cell"><p>Win small Petaluma dairy farm and cheesery in raffle- already profitable!<br> <b>+ $10,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="10000" data-md="0"><p>Win small Petaluma dairy farm and <br>cheesery in raffle- <br>already profitable!<br> <b>+ $10,000</b></p></div>
       <div class="cell"></div>
     </div> 
 
     <div class="row" id='r14'>
-      <div class="cell"><p>Knee replacement surgery necessary. Insurance doesn't cover it<b>- $14,000</b></p></div>
-      <div class="cell"><p>Parents need to move into permanent assisted living center <br><b>-$20,000</b></div>
-      <div class="cell">Your company flies entire family to <br>Japan for summer workshops <br><b>+ 1 LP</b></p></div>
-      <div class="cell"><p>Termites rot out your fancy Victorian home, major repairs needed<br> <b>- $160,000</b></p></div>
-      <div class="cell"><p>Your stocks have been up all year. Enjoy the windfall<br><b>+ $250,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="24000"><p>Knee replacement surgery necessary- pay large deductable<br><b>- $24,000</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="20000"><p>Parents finally need to move into permanent assisted living center <br><b>-$20,000</b></div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0">Your company flies entire family to <br>Japan for summer workshops <br><b>+ 1 LP</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="160000"><p>Termites rot out your fancy Victorian home, major repairs needed<br> <b>- $160,000</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="250000" data-md="0"><p>Your stocks have been up all year. Enjoy the windfall- dividends pay:<br><b>+ $250,000</b></p></div>
+
       <div class="cell"></div>
     </div>
 
     <div class="row" id='r15'>
-      <div class="cell"><p>Career pivots into consulting and board <br> of director's position<br> <b>+$200,000</b></p></div>
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="200000" data-md="0"><p>Career pivots into consulting and board <br> of director's position<br> <b>+$200,000</b></p></div>
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
@@ -177,17 +242,22 @@
     </div>
 
     <div class="row" id='r16'>
-      <div class="cell"><p>Find excellent retirement villa in the Mexican Riviera. <br>Life is good<b> + 1 LP</b></p></div>
-      <div class="cell"><p>Donate your time and money to end <br> world hunger<br><b>- $25,000 <br>+1 LP</b></p></div>
-      <div class="cell"><p>Your first round of grandchildren are born, and they are awesome. <b>+ 3 LP</b></p></div>
-      <div class="cell"><p>Discover stock pile of gold while going through family treasure chest <b>+ $500,000</b></p></div>
-      <div class="cell"><p>Swim with dolphins, save the whales and spend your winters in Hawaii<b> +1 LP</b></p></div>
-      <div class="cell">Having enough and <br> not needing to <br> work again: <br><b> PRICELESS</b><p></div>
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Find excellent retirement villa in Cabo San Lucas, Mexico<br><b> + 1 LP</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="0" data-md="40000"><p>Donate your time and money to end <br> world hunger<br><b>- $40,000 <br>+1 LP</b></p></div>
+
+      <div class="cell" data-lpa="3" data-lpd="0" data-ma="0" data-md="0"><p>Your first round of grandchildren are born, and they are awesome! <b>+ 3 LP</b></p></div>
+
+      <div class="cell" data-lpa="0" data-lpd="0" data-ma="500000" data-md="0"><p>Discover stock pile of gold while going through family treasure chest <b>+ $500,000</b></p></div>
+
+      <div class="cell" data-lpa="1" data-lpd="0" data-ma="0" data-md="0"><p>Swim with dolphins, save the whales and spend your winters in Hawaii<b> +1 LP</b></p></div>
+
+      <div class="cell" data-lpa="5" data-lpd="0" data-ma="0" data-md="0">Having enough & <br> not needing to <br> work anymore: <br><b> PRICELESS +5 LP</b><p></div>
     </div>
     <br>
 
     <div class="end">
-    <h1>END <br>HERE <br> X</h1>
+    <h1>END HERE <br> X</h1>
     
     <br>
   </div>
@@ -196,6 +266,5 @@
 </body>
 <script type="text/javascript">
   assignIds();
-  // assignGameSpots();
 </script>
 </html>

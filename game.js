@@ -20,6 +20,61 @@ var gameSpots= [1,2,3,4,5,6,
 var playerCash=0;
 var lifePoints=0;
 
+// function toggle(div_id) {
+//   var el = document.getElementById(div_id);
+//   if ( el.style.display == 'none' ) { el.style.display = 'block';}
+//   else {el.style.display = 'none';}
+// }
+
+// function blanket_size(popUpDivVar) {
+//   if (typeof window.innerWidth != 'undefined') {
+//     viewportheight = window.innerHeight;
+//   } else {
+//     viewportheight = document.documentElement.clientHeight;
+//   }
+//   if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
+//     blanket_height = viewportheight;
+//   } else {
+//     if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
+//       blanket_height = document.body.parentNode.clientHeight;
+//     } else {
+//       blanket_height = document.body.parentNode.scrollHeight;
+//     }
+//   }
+//   var blanket = document.getElementById('blanket');
+//   blanket.style.height = blanket_height + 'px';
+//   var popUpDiv = document.getElementById(popUpDivVar);
+//   popUpDiv_height=blanket_height/2 - 250;//200 is half popup's height
+//   popUpDiv.style.top = popUpDiv_height + 'px';
+// }
+
+// function window_pos(popUpDivVar) {
+//   if (typeof window.innerWidth != 'undefined') {
+//     viewportwidth = window.innerHeight;
+//   } else {
+//     viewportwidth = document.documentElement.clientHeight;
+//   }
+//   if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
+//     window_width = viewportwidth;
+//   } else {
+//     if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
+//       window_width = document.body.parentNode.clientWidth;
+//     } else {
+//       window_width = document.body.parentNode.scrollWidth;
+//     }
+//   }
+//   var popUpDiv = document.getElementById(popUpDivVar);
+//   window_width=window_width/2-200;//200 is half popup's width
+//   popUpDiv.style.left = window_width + 'px';
+// }
+
+// function popup(windowname) {
+//   blanket_size(windowname);
+//   window_pos(windowname);
+//   toggle('blanket');
+//   toggle(windowname);   
+// }
+
 
  
 $(function() {
@@ -105,7 +160,7 @@ function rollDice(){
     diceTotal = d1;
     die1.innerHTML = d1;
     
-    status.innerHTML = "You rolled: "+ diceTotal;
+    status.innerHTML = "You rolled: \&nbsp;"+ diceTotal;
     move(diceTotal);
 }
 
@@ -124,62 +179,33 @@ function move(roll) {
   //target the position the player will move to
   var newPosition = $("#c" + newPositionID);
 
+  // if (newPositionID > 47) {}
   newPosition.toggleClass("player");
 
-
   document.getElementById("cash-data").innerHTML = playerCash;
-  // document.getElementById("life-point-data").innerHTML = lifePoints;
   var getMoney = $("#c" + newPositionID).attr('data-ma');
   var convertCash = parseInt(getMoney);
   playerCash = (playerCash + convertCash);
   document.getElementById("cash-data").innerHTML = playerCash;
 
   document.getElementById("cash-data").innerHTML = playerCash;
-  // document.getElementById("life-point-data").innerHTML = lifePoints;
-  var getMoney = $("#c" + newPositionID).attr('data-md');
-  var convertCash = parseInt(getMoney);
-  playerCash = (playerCash - convertCash);
+  var loseMoney = $("#c" + newPositionID).attr('data-md');
+  var divertCash = parseInt(loseMoney);
+  playerCash = (playerCash - divertCash);
   document.getElementById("cash-data").innerHTML = playerCash;
 
-
-  
   document.getElementById("life-point-data").innerHTML = lifePoints;
   var getPoints = $("#c" + newPositionID).attr('data-lpa');
   var convertPoints = parseInt(getPoints);
   lifePoints = (lifePoints + convertPoints);
   document.getElementById("life-point-data").innerHTML = lifePoints;
 
+  document.getElementById("life-point-data").innerHTML = lifePoints;
+  var losePoints = $("#c" + newPositionID).attr('data-lpd');
+  var divertPoints = parseInt(losePoints);
+  lifePoints = (lifePoints - divertPoints);
+  document.getElementById("life-point-data").innerHTML = lifePoints;
 }
-
-
-  // function updateCash() {
-  //   var addCash = parseInt($(newPostion).attr('data-ma'));
-  //   var bank = document.getElementById("cash-data");
-
-  //   playerCash = playerCash + addCash;
-  //   bank.innerHTML = playerCash;
-  // }
-  //wait some time & move the player to the new position
-  
-
-  // var addPlayerCash = (function() {
-    
-
-  // var addPlayerLP = (function() {
-  //   var addPoints = $(this).attr('data-lpa');
-
-  // });
-
-  // var deductPlayerCash = (function() {
-  //   var takeCash= $(this).attr('data-md');
-  // });
-
-  // var deductPlayerLifePoints = (function() {
-  //   var takePoints = $(this).attr('data-lpd');
-  // });
-
-
- //end or move
 
 // ---------------------------------------------------
 
